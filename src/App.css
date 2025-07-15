@@ -1,8 +1,19 @@
+/* Page background */
+body {
+  background-color: #f5deb3; /* Warm wheat background */
+  margin: 0;
+  padding: 0;
+}
+
+/* App container */
 .app {
   text-align: center;
   font-family: sans-serif;
+  min-height: 100vh;
+  padding-top: 20px;
 }
 
+/* Controls section */
 .controls {
   margin-bottom: 20px;
 }
@@ -12,6 +23,7 @@
   font-weight: bold;
 }
 
+/* Burger layout */
 .burger {
   display: flex;
   flex-direction: column;
@@ -20,6 +32,7 @@
   margin: 0 auto;
 }
 
+/* Common ingredient styles */
 .top-bread,
 .base-bread,
 .tomato,
@@ -29,9 +42,10 @@
   margin: 5px 0;
   text-align: center;
   font-weight: bold;
-  color: navy;
+  color: white;
 }
 
+/* Top bun */
 .top-bread {
   height: 50px;
   background: #d2691e;
@@ -43,6 +57,7 @@
   line-height: 50px;
 }
 
+/* Bottom bun */
 .base-bread {
   height: 30px;
   background: #a0522d;
@@ -53,6 +68,7 @@
   line-height: 30px;
 }
 
+/* Tomato slice */
 .tomato {
   height: 20px;
   background: #ff4c4c;
@@ -60,6 +76,7 @@
   line-height: 20px;
 }
 
+/* Meat patty */
 .meat {
   height: 25px;
   background: #5c4033;
@@ -67,6 +84,7 @@
   line-height: 25px;
 }
 
+/* Lettuce leaf */
 .lettuce {
   height: 20px;
   background: #4caf50;
