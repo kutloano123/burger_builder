@@ -1,38 +1,56 @@
-.App {
+.app {
   text-align: center;
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.controls {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.controls label {
+  margin: 0 10px;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.burger {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  width: 220px;
+  margin: 0 auto;
+}
+
+.top-bread,
+.base-bread,
+.tomato,
+.meat,
+.lettuce {
+  width: 200px;
+  height: 30px;
+  margin: 5px 0;
+  border-radius: 20px;
   color: white;
+  line-height: 30px;
+  text-align: center;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.top-bread {
+  background: #d2691e;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.base-bread {
+  background: #a0522d;
+}
+
+.tomato {
+  background: red;
+}
+
+.meat {
+  background: #654321;
+}
+
+.lettuce {
+  background: green;
 }
