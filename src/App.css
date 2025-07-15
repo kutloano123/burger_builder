@@ -20,37 +20,62 @@
   margin: 0 auto;
 }
 
+/* Common styles for all ingredients */
 .top-bread,
 .base-bread,
 .tomato,
 .meat,
 .lettuce {
   width: 200px;
-  height: 30px;
   margin: 5px 0;
-  border-radius: 20px;
-  color: white;
-  line-height: 30px;
   text-align: center;
   font-weight: bold;
+  color: white;
 }
 
+/* Top bread with dome shape */
 .top-bread {
+  height: 50px;
   background: #d2691e;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: inset 0 -3px 0 #a0522d;
+  line-height: 50px;
 }
 
+/* Flat bottom bread */
 .base-bread {
+  height: 30px;
   background: #a0522d;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  line-height: 30px;
 }
 
+/* Tomato slice */
 .tomato {
-  background: red;
+  height: 20px;
+  background: #ff4c4c;
+  border-radius: 10px;
+  line-height: 20px;
 }
 
+/* Meat patty */
 .meat {
-  background: #654321;
+  height: 25px;
+  background: #5c4033;
+  border-radius: 15px;
+  line-height: 25px;
 }
 
+/* Lettuce leaf */
 .lettuce {
-  background: green;
+  height: 20px;
+  background: #4caf50;
+  border-radius: 12px;
+  line-height: 20px;
 }
