@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
 
-// Ingredient Components
 function TopBread() {
   return <div className="top-bread"></div>;
 }
@@ -23,7 +22,7 @@ function App() {
   const [selectedIngredient, setSelectedIngredient] = useState("tomato");
   const [position, setPosition] = useState("bottom");
 
-  // Add ingredient
+
   const handleAddIngredient = () => {
     const updated =
       position === "top"
@@ -32,13 +31,11 @@ function App() {
     setIngredients(updated);
   };
 
-  // Remove ingredient at index
   const handleRemoveIngredient = (indexToRemove) => {
     const updated = ingredients.filter((_, index) => index !== indexToRemove);
     setIngredients(updated);
   };
 
-  // Render ingredient component
   const renderIngredient = (type, index) => {
     const props = { onClick: () => handleRemoveIngredient(index), key: index };
 
