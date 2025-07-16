@@ -1,29 +1,60 @@
-/* Page background */
 body {
-  background-color: #f5deb3; /* Warm wheat background */
+  background-color: #fbeec1;
   margin: 0;
   padding: 0;
 }
 
-/* App container */
 .app {
   text-align: center;
-  font-family: sans-serif;
-  min-height: 100vh;
-  padding-top: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
 }
 
-/* Controls section */
-.controls {
+h1 {
   margin-bottom: 20px;
+  color: #5c4033;
 }
 
-.controls label {
-  margin: 0 10px;
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fffbe6;
   font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-color 0.3s;
 }
 
-/* Burger layout */
+select:focus {
+  outline: none;
+  border-color: #d2691e;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #d2691e;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #a0522d;
+}
+
 .burger {
   display: flex;
   flex-direction: column;
@@ -32,20 +63,19 @@ body {
   margin: 0 auto;
 }
 
-/* Common ingredient styles */
+/* Burger ingredient styling */
 .top-bread,
 .base-bread,
 .tomato,
 .meat,
 .lettuce {
   width: 200px;
-  margin: 5px 0;
   text-align: center;
   font-weight: bold;
   color: white;
+  margin: 4px 0;
 }
 
-/* Top bun */
 .top-bread {
   height: 50px;
   background: #d2691e;
@@ -54,10 +84,8 @@ body {
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
   box-shadow: inset 0 -3px 0 #a0522d;
-  line-height: 50px;
 }
 
-/* Bottom bun */
 .base-bread {
   height: 30px;
   background: #a0522d;
@@ -65,29 +93,22 @@ body {
   border-bottom-right-radius: 100px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  line-height: 30px;
 }
 
-/* Tomato slice */
 .tomato {
   height: 20px;
   background: #ff4c4c;
   border-radius: 10px;
-  line-height: 20px;
 }
 
-/* Meat patty */
 .meat {
   height: 25px;
   background: #5c4033;
   border-radius: 15px;
-  line-height: 25px;
 }
 
-/* Lettuce leaf */
 .lettuce {
   height: 20px;
   background: #4caf50;
   border-radius: 12px;
-  line-height: 20px;
 }

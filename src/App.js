@@ -1,65 +1,88 @@
 import React, { useState } from "react";
 import "./App.css";
 
+// Ingredient Components
 function TopBread() {
-  return <div className="top-bread">Top Bread</div>;
+  return <div className="top-bread"></div>;
 }
-function Tomato() {
-  return <div className="tomato">Tomato</div>;
+function Tomato({ onClick }) {
+  return <div className="tomato" onClick={onClick} title="Click to remove"></div>;
 }
-function Meat() {
-  return <div className="meat">Meat</div>;
+function Meat({ onClick }) {
+  return <div className="meat" onClick={onClick} title="Click to remove"></div>;
 }
-function Lettuce() {
-  return <div className="lettuce">Lettuce</div>;
+function Lettuce({ onClick }) {
+  return <div className="lettuce" onClick={onClick} title="Click to remove"></div>;
 }
 function BaseBread() {
-  return <div className="base-bread">Base Bread</div>;
+  return <div className="base-bread"></div>;
 }
 
 function App() {
-  const [includeTomato, setIncludeTomato] = useState(true);
-  const [includeMeat, setIncludeMeat] = useState(true);
-  const [includeLettuce, setIncludeLettuce] = useState(true);
+  const [ingredients, setIngredients] = useState([]);
+  const [selectedIngredient, setSelectedIngredient] = useState("tomato");
+  const [position, setPosition] = useState("bottom");
+
+  // Add ingredient
+  const handleAddIngredient = () => {
+    const updated =
+      position === "top"
+        ? [selectedIngredient, ...ingredients]
+        : [...ingredients, selectedIngredient];
+    setIngredients(updated);
+  };
+
+  // Remove ingredient at index
+  const handleRemoveIngredient = (indexToRemove) => {
+    const updated = ingredients.filter((_, index) => index !== indexToRemove);
+    setIngredients(updated);
+  };
+
+  // Render ingredient component
+  const renderIngredient = (type, index) => {
+    const props = { onClick: () => handleRemoveIngredient(index), key: index };
+
+    switch (type) {
+      case "tomato":
+        return <Tomato {...props} />;
+      case "meat":
+        return <Meat {...props} />;
+      case "lettuce":
+        return <Lettuce {...props} />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className="app">
-      <h1> ACA-Build Your Burger</h1>
+      <h1> ACA - Build Your Burger</h1>
 
       <div className="controls">
-        <label>
-          <input
-            type="checkbox"
-            checked={includeTomato}
-            onChange={() => setIncludeTomato(!includeTomato)}
-          />
-          Tomato
-        </label>
+        <select
+          value={selectedIngredient}
+          onChange={(e) => setSelectedIngredient(e.target.value)}
+        >
+          <option value="tomato">Tomato</option>
+          <option value="meat">Meat</option>
+          <option value="lettuce">Lettuce</option>
+        </select>
 
-        <label>
-          <input
-            type="checkbox"
-            checked={includeMeat}
-            onChange={() => setIncludeMeat(!includeMeat)}
-          />
-          Meat
-        </label>
+        <select value={position} onChange={(e) => setPosition(e.target.value)}>
+          <option value="top">Add to Top</option>
+          <option value="bottom">Add to Bottom</option>
+        </select>
 
-        <label>
-          <input
-            type="checkbox"
-            checked={includeLettuce}
-            onChange={() => setIncludeLettuce(!includeLettuce)}
-          />
-          Lettuce
-        </label>
+        <button onClick={handleAddIngredient}>Add Ingredient</button>
       </div>
+
+      <p style={{ fontSize: "14px", color: "#5c4033" }}>
+         Click an ingredient in the burger to remove it.
+      </p>
 
       <div className="burger">
         <TopBread />
-        {includeTomato && <Tomato />}
-        {includeMeat && <Meat />}
-        {includeLettuce && <Lettuce />}
+        {ingredients.map((item, index) => renderIngredient(item, index))}
         <BaseBread />
       </div>
     </div>
@@ -67,3 +90,4 @@ function App() {
 }
 
 export default App;
+ 
